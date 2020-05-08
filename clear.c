@@ -5,11 +5,11 @@
 #include "user.h"
 
 //rekursi 
-void clear(int x)
+void clear(int n)
 {
-  if(x=='x') return;
+  if(n=='x') return;
   printf(1,"\xa");
-  clear(x+('1'-48));
+  clear(n+('1'-48));
 }
 
 int main(void)
