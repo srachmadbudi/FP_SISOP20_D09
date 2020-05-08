@@ -1,12 +1,19 @@
 // clear : Membersihkan terminal screen 
 // hasilnya current line pada terminal screen akan hilang, namun tetap ada jika kita scroll ke atas.
-#include "types.h"
-#include "stat.h"
-#include "user.h"
-#include "fs.h"
 
-int main(int argc, char *argv[])
+#include "types.h"
+#include "user.h"
+
+//rekursi 
+void clear(int x)
 {
-  printf(1, "\033[2J\033[1;1H\n");
+  if(x=='x') return;
+  printf(1,"\xa");
+  clear(x+('1'-48));
+}
+
+int main(void)
+{
+  clear('A');
   exit();
 }
